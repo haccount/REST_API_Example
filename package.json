@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/haccount/REST_API_Example/issues"
   },
-  "homepage": "https://github.com/haccount/REST_API_Example#readme"
+  "homepage": "https://github.com/haccount/REST_API_Example#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
