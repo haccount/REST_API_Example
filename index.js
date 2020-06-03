@@ -1,13 +1,11 @@
 const express = require('express');
+// const routes = require('./routes/api');
 
 // set up express app
 const app = express();
 
-// handle GET request
-app.get('/', function(req, res){
-  console.log('GET request');
-  res.send({name: 'John'});
-});
+// initialize routes
+app.use('/api', require('./routes/api'));
 
 // listen for requests
 app.listen(process.env.port || 3001, function(){
