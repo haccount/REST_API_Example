@@ -9,7 +9,12 @@ router.get('/sample', function(req, res){
 
 // add new stuff to the db
 router.post('/sample', function(req, res){
-  res.send({type: 'POST'});
+  console.log(req.body);
+  res.send({
+    type: 'POST',
+    name: req.body.name,
+    rank: req.body.rank
+  });
 });
 
 // update stuff in the db
