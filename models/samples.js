@@ -1,4 +1,4 @@
-const mongoose = require(mongoose);
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 // Schema will set how our data will be structured
 
