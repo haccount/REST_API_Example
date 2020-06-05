@@ -2,8 +2,26 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 // Schema will set how our data will be structured
 
+// reference from GEOJSON.org
+  // "geometry": {
+  //   "type": "Point",
+  //   "coordinates": [125.6, 10.1]
+  // },
+
+// create geolocation Schema
+const GeoSchema = new Schema({
+  type: {
+    type: String,
+    default: "Point"
+  },
+  coordinates: {
+    type: [Number],
+    index: "2dsphere" // type of map
+  }
+});
+
 // create sample Schema & model
-const SampleSchema = new Schema ({
+const SampleSchema = new Schema({
   name: {
     type: String,
     required: [true, 'Name field is required']
@@ -14,8 +32,8 @@ const SampleSchema = new Schema ({
   available: {
     type: Boolean,
     default: false
-  }
-  // add in geo location
+  },
+  geometry: GeoSchema
 });
 
 // create our model here by setting it equal to model('name of collection')
