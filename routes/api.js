@@ -22,7 +22,10 @@ router.put('/sample/:id', function(req, res, next){
 
 // delete stuff from db
 router.delete('/sample/:id', function(req, res, next){
-  res.send({type: 'DELETE'});
+  Sample.findByIdAndRemove({_id: req.params.id}).then(function(sample){
+    res.send(sample);
+  })
+  // res.send({type: 'DELETE'});
 });
 
 module.exports = router;
