@@ -12,6 +12,7 @@ mongoose.connect('mongodb://localhost/samplego')
 // overwrite mongoose promise because it is deprecated
 mongoose.Promise = global.Promise;
 
+app.use(express.static('public'))
 
 app.use(bodyParser.json());
 
