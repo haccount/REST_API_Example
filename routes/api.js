@@ -3,8 +3,30 @@ const router = express.Router();
 const Sample = require('../models/samples')
 
 // get a list of stuff from the db
-router.get('/sample', function(req, res, next){
-  res.send({type: 'GET'});
+router.get('/samples', function(req, res, next){
+  // res.send({type: 'GET'});
+  /* Sample.find({}).then(function(samples){
+    res.send(samples);
+  }); */
+  // add on URL parameters
+    // Sample.geoNear(
+  //   {type: "Point", coordinates: [parseFloat(req.query.lng), parseFloat(req.query.lat)]},
+  //   {maxDistance: 100000, spherical: true}
+  // ).then(function(samples){
+  //   res.send(samples);
+  // });
+
+  // geoNear function in mongoose apparently deprecated, so used the following...
+  Sample.aggregate().near({
+    near: {
+      'type' : 'Point',
+      'coordinates': [parseFloat(req.query.lng), parseFloat(req.query.lat)]},
+      maxDistance: 100000,
+      spherical: true,
+      distanceField: 'dis'
+    }).then(function(samples){
+      res.send(samples);
+    });
 });
 
 // add new stuff to the db
