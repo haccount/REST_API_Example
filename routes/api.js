@@ -30,7 +30,7 @@ router.get('/samples', function(req, res, next){
 });
 
 // add new stuff to the db
-router.post('/sample', function(req, res, next){
+router.post('/samples', function(req, res, next){
   Sample.create(req.body).then(function(sample){
     res.send(sample);
   }).catch(next); 
@@ -38,7 +38,7 @@ router.post('/sample', function(req, res, next){
 // pass in 3rd parameter next function, and add function in .catch that fires if there's an error
 
 // update stuff in the db
-router.put('/sample/:id', function(req, res, next){
+router.put('/samples/:id', function(req, res, next){
   Sample.findByIdAndUpdate({_id: req.params.id}, req.body).then(function(){
     // re-find the sample and send it back (otherwise it may return the old 'sample')
     Sample.findOne({_id: req.params.id}).then(function(sample){
@@ -49,7 +49,7 @@ router.put('/sample/:id', function(req, res, next){
 });
 
 // delete stuff from db
-router.delete('/sample/:id', function(req, res, next){
+router.delete('/samples/:id', function(req, res, next){
   Sample.findByIdAndRemove({_id: req.params.id}).then(function(sample){
     res.send(sample);
   })
