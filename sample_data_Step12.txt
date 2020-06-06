@@ -1,0 +1,48 @@
+{
+  "name" : "Jane",
+  "rank" : "tenth",
+  "available" : true,
+  "geometry" : {"type" : "point", "coordinates": [-81, 26.722]}
+} 
+
+{
+  "name" : "Bob",
+  "rank" : "seventh",
+  "available" : true,
+  "geometry" : {"type" : "point", "coordinates": [-80.343, 25.382]}
+} 
+
+{
+  "name" : "Mike",
+  "rank" : "fifth",
+  "available" : true,
+  "geometry" : {"type" : "point", "coordinates": [-80.788, 25.702]}
+} 
+
+{
+  "name" : "Yvonne",
+  "rank" : "ninth",
+  "available" : true,
+  "geometry" : {"type" : "point", "coordinates": [-82.588, 26.703]}
+} 
+
+{
+  "name" : "Nancy",
+  "rank" : "fourth",
+  "available" : true,
+  "geometry" : {"type" : "point", "coordinates": [-81.2, 24.96]}
+} 
+
+{
+  "name" : "Sharon",
+  "rank" : "eighth",
+  "available" : true,
+  "geometry" : {"type" : "point", "coordinates": [-79.788, 25.03]}
+} 
+
+{
+  "name" : "Larry",
+  "rank" : "sixth",
+  "available" : true,
+  "geometry" : {"type" : "point", "coordinates": [-81.8, 25.5]}
+} 
